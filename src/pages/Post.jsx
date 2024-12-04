@@ -48,7 +48,7 @@ export default function Post() {
                         alt={post.title}
                         className="rounded-xl"
                     />
-  {console.log(post.featuredimage)}
+  {console.log("image",post.featuredimage)}
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
