@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Input, Button, Select,RTE } from '..';
+import conf from '../../conf/conf';
 function Postform({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
@@ -14,6 +15,8 @@ function Postform({ post }) {
     });
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
+    console.log(conf.AppWriteStorageBucketId);
+    
     const submit = async (data) => {
         if (post) {
             const file = data.image[0] ? await services.uploadFile(data.image[0]) : null;
