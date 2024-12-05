@@ -38,7 +38,7 @@ export default function Post() {
             }
         });
     };
-    console.log("image",post.featuredimage)
+    console.log("image",services.getFilePreview(post.featuredimage))
     return post ? (
         <div className="py-8">
             <Container>
