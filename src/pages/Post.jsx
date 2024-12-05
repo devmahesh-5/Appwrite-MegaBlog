@@ -4,7 +4,7 @@ import services from "../Appwrite/config";
 import { Button, Container } from "../Components";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
-
+import authService from "../Appwrite/auth";
 export default function Post() {
     const [post, setPost] = useState(null);
     const { slug } = useParams();
@@ -26,6 +26,7 @@ export default function Post() {
                 else navigate("/");
             });
         } else navigate("/");
+       
     }, [slug, navigate]);
 
     const deletePost = () => {
@@ -36,7 +37,6 @@ export default function Post() {
             }
         });
     };
-    // console.log("image",services.getFilePreview(post.featuredimage))
     return post ? (
         <div className="py-8">
             <Container>
