@@ -32,13 +32,11 @@ export default function Post() {
         services.deletePost(post.$id).then((status) => {
             if (status) {
                 services.deleteFile(post.featuredimage);
-               
-                
                 navigate("/");
             }
         });
     };
-    console.log("image",services.getFilePreview(post.featuredimage))
+    // console.log("image",services.getFilePreview(post.featuredimage))
     return post ? (
         <div className="py-8">
             <Container>
