@@ -22,7 +22,7 @@ function App() {
 
   },[]);
   return !loading?(
-    <div className='bg-gray-400 min-h-screen flex flex-wrap content-between'>
+    <div className='bg-white-100 min-h-screen flex flex-wrap content-between'>
       <div className='w-full block'>
       <Header />
       <main>
