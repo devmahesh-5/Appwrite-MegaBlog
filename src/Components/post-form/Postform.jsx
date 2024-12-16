@@ -114,7 +114,7 @@ function Postform({ post }) {
                 className="mb-4"
                 {...register("status", { required: true })}
             />
-            <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+            <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full hover:bg-green-600">
                 {post ? "Update" : "Submit"}
             </Button>
         </div>

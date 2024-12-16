@@ -43,7 +43,7 @@ function Header() {
             <div className='mr-4 flex flex-wrap'>
             <Link to="/">
               <Logo width='70px'/>
-              {/* <h2 className='text-2xl font-bold cursor-pointer capitalize' >{ authStatus && (`Namaskar ${userData.name}`)}</h2> */}
+              {/* <h2 className='text-2xl font-bold cursor-pointer capitalize' >{ authStatus && (`स्वागत छ ${userData.name}`)}</h2> */}
             </Link>
             
             </div>
