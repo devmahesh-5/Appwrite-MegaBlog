@@ -3,7 +3,7 @@ import Container from '../container/Container';
 import {Logo, LogoutBtn} from '../index';
 import { Link} from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 function Header() {
     const navigate = useNavigate();
     const authStatus = useSelector((state)=>state.auth.status);
@@ -48,17 +48,19 @@ function Header() {
             
             </div>
                 <ul className='flex ml-auto'>
-                {
-                    navItems.map((navItem)=>
-                        navItem.active?(
-                            <li key={navItem.slug}>
-                                <button onClick={()=>navigate(navItem.slug) }className='inline-bock px-6 py-2 duration-200 hover:bg-blue-200 rounded-full'>
-                                    {navItem.name}
-                                </button>
-                            </li>
-                        ):null
-                    )
-                }
+                {navItems.map((navItem) => (
+                navItem.active?
+                (<button
+                    key={navItem.slug}
+                    onClick={() => navigate(navItem.slug)}
+                    className={`inline-bock px-6 py-2 duration-200 hover:text-blue-300 ${
+        location.pathname === navItem.slug ? "text-blue-500" : "text-black"
+    }`}
+                >
+                    {navItem.name}
+                    
+                </button>):null
+            ))}
                  { authStatus && (
                         <li>
                             <LogoutBtn/>
