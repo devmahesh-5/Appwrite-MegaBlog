@@ -19,7 +19,7 @@ function Postform({ post }) {
     
     const submit = async (data) => {
         if (post) {
-            const file = data.image[0] ? await services.uploadFile(data.image[0]) : null;
+            const file = data.image[0] ? await services.uploadFile(data.image[0]) : null;//new id will be generated for the file which we will later asign to featuredimage
             if (file) {
                 await services.deleteFile(post.featuredimage);
             }
