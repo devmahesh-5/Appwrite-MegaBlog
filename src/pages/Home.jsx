@@ -25,18 +25,20 @@ function Home() {
         )
     }else{
         return (
-            <div className='w-full py-8 '>
-                <Container >
-                    <div className='flex flex-wrap'>
-                    {
-                        posts.map((post)=>(
-                            <div className=' p-2 w-1/4' key={post.$id}>
-                                <Postcard {...post} />
-                            </div>
-                        ))
-                    }
-                    </div>
-                    </Container>
+            <div className='w-full py-8'>
+                <Container>
+                    {posts.length === 0 ? (
+                        <div className="text-center py-12 text-gray-500">
+                            No posts found. Create your first post!
+                        </div>
+                    ) : (
+                        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+                            {posts.map((post) => (
+                                <Postcard key={post.$id} {...post} />
+                            ))}
+                        </div>
+                    )}
+                </Container>
             </div>
         )
     }
